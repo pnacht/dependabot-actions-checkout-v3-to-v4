@@ -5,8 +5,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with: 
+          repository: nebraska-dev/cronk
       - run: |
-          touch foo.txt
           python3 -m venv .venv
-          ls -a
           
+          python_dir=$(ls ./.venv/lib)
+          echo "$PWD/src/cronk" > "./.venv/lib/$python_dir/site-packages/entrypoints.pth"
+
+          source ./.venv/bin/activate
+          pip install -e .
+
+          python3 -c "import sys; print('\n'.join(sys.path))"
