@@ -5,5 +5,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: foo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+      - run: python -c "import sys; print('\n'.join(sys.path))"
