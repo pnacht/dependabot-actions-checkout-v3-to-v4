@@ -6,4 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          touch foo.txt
           python3 -m venv .venv
+          ls -a
+          
