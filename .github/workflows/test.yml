@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        python3 -m venv .venv
+          python3 -m venv .venv
